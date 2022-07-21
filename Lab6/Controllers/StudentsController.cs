@@ -65,7 +65,8 @@ namespace Lab6.Controllers
 
             try
             {
-                var updatedStudent = await _context.SaveChangesAsync();
+                var updatedStudentId = await _context.SaveChangesAsync();
+                var updatedStudent = await _context.Students.FindAsync(id);
 
                 return Ok(updatedStudent);
             }
